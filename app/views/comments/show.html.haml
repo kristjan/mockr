@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Author:
+  = @comment.author_id
+%p
+  %b Mock:
+  = @comment.mock_id
+%p
+  %b Body:
+  = @comment.body
+
+= link_to 'Edit', edit_comment_path(@comment)
+\|
+= link_to 'Back', comments_path
