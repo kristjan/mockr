@@ -33,7 +33,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'mocha'
+  gem 'mocha', require: false
 end
 
 group :doc do
