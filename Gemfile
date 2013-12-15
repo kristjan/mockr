@@ -33,6 +33,9 @@ gem 'devise'
 # Templates
 gem 'haml-rails'
 
+# Images
+gem 'carrierwave'
+
 group :development do
   gem 'dotenv-rails'
 end
