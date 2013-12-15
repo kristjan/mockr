@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @comment = Comment.new(author_id: current_user.id, mock_id: params[:mock_id])
   end
 
   # GET /comments/1/edit
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.mock}
         format.json { render action: 'show', status: :created, location: @comment }
       else
         format.html { render action: 'new' }

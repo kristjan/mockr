@@ -5,3 +5,11 @@
 %p
   %b Posted by
   = @mock.creator_id
+
+= render 'comments/form'
+
+- if @mock.comments.any?
+  %ul
+    - @mock.comments.each do |comment|
+      %li
+        = comment.body

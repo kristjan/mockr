@@ -5,15 +5,9 @@
       %ul
         - @comment.errors.full_messages.each do |msg|
           %li= msg
-
+  = f.hidden_field :author_id
+  = f.hidden_field :mock_id
   .field
-    = f.label :author_id
-    = f.number_field :author_id
-  .field
-    = f.label :mock_id
-    = f.number_field :mock_id
-  .field
-    = f.label :body
-    = f.text_field :body
+    = f.text_area :body
   .actions
-    = f.submit 'Save'
+    = f.submit 'Post'

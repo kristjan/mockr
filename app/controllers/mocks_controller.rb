@@ -10,6 +10,7 @@ class MocksController < ApplicationController
   # GET /mocks/1
   # GET /mocks/1.json
   def show
+    @comment = Comment.new(author_id: current_user.id, mock_id: params[:id])
   end
 
   # GET /mocks/new
