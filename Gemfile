@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Authentication
 gem 'devise'
 
+# Templates
+gem 'haml-rails'
+
 group :development do
   gem 'dotenv-rails'
 end
