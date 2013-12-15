@@ -40,8 +40,9 @@ group :development do
   gem 'dotenv-rails'
 end
 
-group :development, :test do
+group :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'mocha', require: false
 end
 
