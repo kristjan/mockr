@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Creator:
+  = @mock.creator_id
+%p
+  %b Url:
+  = @mock.url
+
+= link_to 'Edit', edit_mock_path(@mock)
+\|
+= link_to 'Back', mocks_path

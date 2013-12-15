@@ -1,0 +1,16 @@
+= form_for @mock do |f|
+  - if @mock.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@mock.errors.count, "error")} prohibited this mock from being saved:"
+      %ul
+        - @mock.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :creator_id
+    = f.number_field :creator_id
+  .field
+    = f.label :url
+    = f.text_field :url
+  .actions
+    = f.submit 'Save'

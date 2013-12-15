@@ -1,4 +1,6 @@
 Mockr::Application.routes.draw do
+  resources :mocks
+
   root to: 'home#index'
 
   devise_for :users
