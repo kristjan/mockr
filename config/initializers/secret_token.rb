@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Mockr::Application.config.secret_key_base = '4c4a16a1a9b59f29094ee14cd7b7b9c469cd4595ed41f639e22eb5d585545860fb8942275008f8df64292594e7e38acb2a94139c3744e8fb0dfdfc06f54355bd'
+Mockr::Application.config.secret_key_base = ENV['SECRET_TOKEN'] || 'thisisastupidsecret'
