@@ -44,6 +44,7 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'mocha', require: false
+  gem 'ffaker'
 end
 
 group :doc do

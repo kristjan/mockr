@@ -57,6 +57,7 @@ GEM
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    ffaker (1.22.1)
     haml (4.0.3)
       tilt
     haml-rails (0.5.2)
@@ -157,6 +158,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  ffaker
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
