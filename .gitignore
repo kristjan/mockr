@@ -17,3 +17,6 @@
 
 # Ignore a dev's local .env
 .env
+
+# Ignore uploaded photos
+public/uploads

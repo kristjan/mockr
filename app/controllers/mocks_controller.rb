@@ -69,6 +69,6 @@ class MocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mock_params
-      params.require(:mock).permit(:creator_id, :url)
+      params.require(:mock).permit(:image).merge(creator_id: current_user.id)
     end
 end

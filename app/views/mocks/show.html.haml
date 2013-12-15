@@ -2,10 +2,10 @@
 
 %p
   %b Creator:
-  = @mock.creator_id
+  = @mock.creator.email
 %p
-  %b Url:
-  = @mock.url
+  %b Image:
+  = image_tag @mock.image.url
 
 = link_to 'Edit', edit_mock_path(@mock)
 \|

@@ -3,7 +3,7 @@
 %table
   %tr
     %th Creator
-    %th Url
+    %th Image
     %th
     %th
     %th
@@ -11,7 +11,7 @@
   - @mocks.each do |mock|
     %tr
       %td= mock.creator_id
-      %td= mock.url
+      %td= mock.image
       %td= link_to 'Show', mock
       %td= link_to 'Edit', edit_mock_path(mock)
       %td= link_to 'Destroy', mock, :method => :delete, :data => { :confirm => 'Are you sure?' }
