@@ -1,12 +1,7 @@
 %p#notice= notice
 
 %p
-  %b Creator:
-  = @mock.creator_id
+  %img{src: @mock.url}
 %p
-  %b Url:
-  = @mock.url
-
-= link_to 'Edit', edit_mock_path(@mock)
-\|
-= link_to 'Back', mocks_path
+  %b Posted by
+  = @mock.creator_id

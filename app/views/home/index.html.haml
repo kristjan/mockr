@@ -1,6 +1,7 @@
 %h1 Mockr
 - if current_user
   %p= "Hello #{current_user.email}!"
+  = link_to "Upload a mock", new_mock_path
 - else
   You've got to
   = link_to "sign up", new_user_registration_path
