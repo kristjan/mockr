@@ -52,6 +52,8 @@ test:
   pool: 5
   username: mockr
   password:
+  host: localhost
+  port: 5432
 
 production:
   adapter: postgresql
