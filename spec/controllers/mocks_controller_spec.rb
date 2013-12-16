@@ -68,17 +68,21 @@ describe MocksController do
     end
 
     describe "with invalid params" do
+      let(:attributes) do
+        {'image' => :not_an_image}
+      end
+
       it "assigns a newly created but unsaved mock as @mock" do
         # Trigger the behavior that occurs when invalid params are submitted
         Mock.any_instance.stubs(:save).returns(false)
-        post :create, {mock: {'image' => :not_an_image}}
+        post :create, {mock: attributes}
         assigns(:mock).should be_a_new(Mock)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Mock.any_instance.stubs(:save).returns(false)
-        post :create, {mock: {'image' => :not_an_image}}
+        post :create, {mock: attributes}
         response.should render_template("new")
       end
     end
