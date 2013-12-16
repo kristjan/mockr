@@ -1,23 +1,16 @@
 require 'spec_helper'
 
 describe "mocks/index" do
-  before(:each) do
-    assign(:mocks, [
-      stub_model(Mock,
-        :creator_id => 1,
-        :url => "Url"
-      ),
-      stub_model(Mock,
-        :creator_id => 1,
-        :url => "Url"
-      )
-    ])
+  let!(:mocks) do
+    assign(:mocks, 2.times.map { create(:mock) })
   end
 
   it "renders a list of mocks" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => "Url".to_s, :count => 2
+
+    mocks.each do |mock|
+      assert_select "tr>td", :text => mock.creator_id.to_s
+      assert_select "tr>td", :text => mock.image.url
+    end
   end
 end
