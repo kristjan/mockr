@@ -33,7 +33,11 @@ gem 'devise'
 # Templates
 gem 'haml-rails'
 
+# Bootstrap
+gem 'bootstrap-sass'
+
 group :development do
+  gem 'rails_layout'
   gem 'dotenv-rails'
 end
 
