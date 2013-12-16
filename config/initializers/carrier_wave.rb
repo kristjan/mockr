@@ -11,7 +11,6 @@ if Rails.env.test?
 
   # use different dirs when testing
   CarrierWave::Uploader::Base.descendants.each do |klass|
-    puts klass.name
     next if klass.anonymous?
     klass.class_eval do
       def cache_dir
