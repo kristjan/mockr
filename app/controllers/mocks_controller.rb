@@ -69,6 +69,10 @@ class MocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mock_params
-      params.require(:mock).permit(:image).merge(creator_id: current_user.id)
+      params.require(:mock).permit(:image).tap do |safe_params|
+        if params[:action] == 'create'
+          safe_params.merge(creator_id: current_user.id)
+        end
+      end
     end
 end
