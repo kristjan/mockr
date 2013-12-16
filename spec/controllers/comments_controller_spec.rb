@@ -50,6 +50,11 @@ describe CommentsController do
         }.to change(Comment, :count).by(1)
       end
 
+      it "sets the logged-in user as the author" do
+        post :create, {comment: attributes}
+        assigns(:comment).author.should == subject.current_user
+      end
+
       it "assigns a newly created comment as @comment" do
         post :create, {comment: attributes}
         assigns(:comment).should be_a(Comment)
@@ -93,8 +98,8 @@ describe CommentsController do
         # specifies that the Comment created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Comment.any_instance.expects(:update).with({ "author_id" => "1" })
-        put :update, {:id => comment.to_param, :comment => { "author_id" => "1" }}
+        Comment.any_instance.expects(:update).with({ 'body' => 'Foo' })
+        put :update, {:id => comment.to_param, :comment => { 'body' => 'Foo' }}
       end
 
       it "assigns the requested comment as @comment" do

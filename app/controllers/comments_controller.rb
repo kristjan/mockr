@@ -69,6 +69,10 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:author_id, :mock_id, :body)
+      params.require(:comment).permit(:mock_id, :body).tap do |safe_params|
+        if params[:action] == 'create'
+          safe_params.merge!(author_id: current_user.id)
+        end
+      end
     end
 end

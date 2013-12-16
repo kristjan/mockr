@@ -5,7 +5,6 @@
       %ul
         - @comment.errors.full_messages.each do |msg|
           %li= msg
-  = f.hidden_field :author_id
   = f.hidden_field :mock_id
   .field
     = f.text_area :body
