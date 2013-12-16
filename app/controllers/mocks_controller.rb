@@ -71,7 +71,7 @@ class MocksController < ApplicationController
     def mock_params
       params.require(:mock).permit(:image).tap do |safe_params|
         if params[:action] == 'create'
-          safe_params.merge(creator_id: current_user.id)
+          safe_params.merge!(creator_id: current_user.id)
         end
       end
     end

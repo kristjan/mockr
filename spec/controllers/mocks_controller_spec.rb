@@ -50,14 +50,19 @@ describe MocksController do
         }.to change(Mock, :count).by(1)
       end
 
+      it "sets the logged-in user as the creator" do
+        post :create, {mock: attributes}
+        assigns(:mock).creator.should == subject.current_user
+      end
+
       it "assigns a newly created mock as @mock" do
-        post :create, {:mock => attributes}
+        post :create, {mock: attributes}
         assigns(:mock).should be_a(Mock)
         assigns(:mock).should be_persisted
       end
 
       it "redirects to the created mock" do
-        post :create, {:mock => attributes}
+        post :create, {mock: attributes}
         response.should redirect_to(Mock.last)
       end
     end
