@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %img{src: @mock.url}
+  = image_tag @mock.image.url
+
 %p
   %b Posted by
-  = @mock.creator_id
+  = @mock.creator.email
 
 = render 'comments/form'
 
 - if @mock.comments.any?
   %ul
     - @mock.comments.each do |comment|
-      %li
-        = comment.body
+      %li= comment.body

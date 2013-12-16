@@ -1,1 +1,1 @@
-json.extract! @mock, :id, :creator_id, :url, :created_at, :updated_at
+json.extract! @mock, :id, :creator_id, :image, :created_at, :updated_at

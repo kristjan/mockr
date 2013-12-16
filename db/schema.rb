@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20131215232544) do
 
   create_table "mocks", force: true do |t|
     t.integer  "creator_id"
-    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "users", force: true do |t|

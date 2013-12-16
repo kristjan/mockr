@@ -36,6 +36,9 @@ gem 'haml-rails'
 # Bootstrap
 gem 'bootstrap-sass'
 
+# Images
+gem 'carrierwave'
+
 group :development do
   gem 'rails_layout'
   gem 'dotenv-rails'
@@ -43,7 +46,13 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'autotest-rails'
+end
+
+group :test do
+  gem 'factory_girl_rails'
   gem 'mocha', require: false
+  gem 'ffaker'
 end
 
 group :doc do
