@@ -1,3 +1,6 @@
 language: ruby
 rvm:
   - 2.0.0
+before_script:
+  - cp config/ci/database.yml config/database.yml
+  - psql -c 'create database mockr_test;' -U postgres
