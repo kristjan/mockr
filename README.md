@@ -1,4 +1,4 @@
 # Mockr
 
 ## Build Status
-~[](https://travis-ci.org/kristjan/mockr.png)
+![](https://travis-ci.org/kristjan/mockr.png)
