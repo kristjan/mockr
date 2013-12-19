@@ -1,1 +1,6 @@
-%p Home Page
+- if @mocks.any?
+  %ul.mock-list
+    - @mocks.each do |mock|
+      %li
+        %a{href: mock_path(mock)}
+          %img{src: mock.image}
