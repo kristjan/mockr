@@ -39,7 +39,7 @@ Mockr::Application.routes.draw do
   #     resource :seller
   #   end
 
-  # Example resource route with more complex sub-resources:
+  # Example resource route with more complex sub-resourceces:
   #   resources :products do
   #     resources :comments
   #     resources :sales do

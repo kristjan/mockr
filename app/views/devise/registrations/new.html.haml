@@ -1,0 +1,20 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f|
+  %h2
+    Sign up for
+    %strong Mockr
+
+  = devise_error_messages!
+
+  %p
+    = f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control"
+
+  %p
+    = f.password_field :password, placeholder: "Password", class: "form-control"
+
+  %p
+    = f.password_field :password_confirmation, placeholder: "Confirm password", class: "form-control"
+
+  %p
+    = f.submit "Start Mocking!", class: "btn btn-lg btn-primary"
+  
+  = render "devise/shared/links"
