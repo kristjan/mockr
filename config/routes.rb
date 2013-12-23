@@ -5,7 +5,9 @@ Mockr::Application.routes.draw do
 
   root to: 'home#index'
 
-  devise_for :users, controllers: {registrations: 'users/registrations'}
+  devise_for :users, controllers: {registrations: 'users/registrations'},
+    path: '', :path_names => {sign_in: "sign-in", sign_up: "sign-up"}
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
