@@ -38,6 +38,7 @@ gem 'bootstrap-sass'
 
 # Images
 gem 'carrierwave'
+gem 'cloudinary'
 
 group :development do
   gem 'rails_layout'
