@@ -7,7 +7,7 @@ describe "mocks/show" do
   it "renders attributes" do
     render
 
-    rendered.should include(mock.creator.email)
+    rendered.should include(mock.creator.name)
     rendered.should include(mock.image.url)
   end
 end
