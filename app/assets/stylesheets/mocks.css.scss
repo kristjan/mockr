@@ -1,5 +1,16 @@
-img {
-	width: 500px;
+#mock {
+  margin-bottom: 1em;
+}
+
+.mock-data {
+  .comments-count {
+    float: right;
+  }
+}
+
+#new_comment {
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
 }
 
 .comments-list {

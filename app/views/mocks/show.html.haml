@@ -1,21 +1,26 @@
-%p
+#mock
   = image_tag @mock.image.url
 
-%p
-  %b Posted by
-  = @mock.creator.email
+%p.mock-data
+  %span.comments-count
+    = pluralize(@mock.comments.size, "comment")
+  By
+  = @mock.creator.name
+  on
+  = @mock.created_at.strftime("%B %e")
 
-= render 'comments/form'
+.comments
+  = render 'comments/form'
 
-- if @mock.comments.any?
-  %ul.comments-list
-    - @mock.comments.each do |comment|
-      %li
-        .time
-          Posted
-          = distance_of_time_in_words_to_now comment.created_at
-          ago
-        %strong
-          = comment.author.name
-        %p
-          = comment.body
+  - if @mock.comments.any?
+    %ul.comments-list
+      - @mock.comments.each do |comment|
+        %li
+          .time
+            Posted
+            = distance_of_time_in_words_to_now comment.created_at
+            ago
+          %strong
+            = comment.author.name
+          %p
+            = comment.body
