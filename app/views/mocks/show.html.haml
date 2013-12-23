@@ -8,6 +8,14 @@
 = render 'comments/form'
 
 - if @mock.comments.any?
-  %ul
+  %ul.comments-list
     - @mock.comments.each do |comment|
-      %li= comment.body
+      %li
+        .time
+          Posted
+          = distance_of_time_in_words_to_now comment.created_at
+          ago
+        %strong
+          = comment.author.name
+        %p
+          = comment.body
