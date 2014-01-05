@@ -1,6 +1,10 @@
 = form_for @comment do |f|
   = f.hidden_field :mock_id
+  = f.hidden_field :top_offset_percentage
+  = f.hidden_field :left_offset_percentage
   %p.field
     = f.text_area :body, class: 'form-control', placeholder: "Add a comment..."
   %p.actions
     = f.submit 'Post', class: 'btn btn-primary'
+    or
+    = link_to "Cancel", "", class: 'cancel-commenting'
