@@ -1,0 +1,7 @@
+- if mocks.present?
+  %ul.mock-list
+    - mocks.each do |mock|
+      %li
+        %a{href: mock_path(mock)}
+          %img{src: mock.image}
+
