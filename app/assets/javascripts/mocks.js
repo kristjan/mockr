@@ -35,7 +35,6 @@ $(function() {
     dot.show().css(
       {top: topOffsetPercentage + "%", left: leftOffsetPercentage + "%"});
 
-    $("#comment_body").focus();
     $("#comment_left_offset_percentage").val(leftOffsetPercentage);
     $("#comment_top_offset_percentage").val(topOffsetPercentage);
   };
