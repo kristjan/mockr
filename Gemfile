@@ -42,6 +42,8 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'cloudinary'
 
+gem 'compass-rails'
+
 group :development do
   gem 'rails_layout'
   gem 'dotenv-rails'
