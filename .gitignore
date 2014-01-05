@@ -20,3 +20,6 @@
 
 # Ignore uploaded photos
 public/uploads
+
+# Ignore compiled assets
+.sass-cache/
