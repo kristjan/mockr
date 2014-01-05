@@ -1,7 +1,10 @@
 Mockr::Application.routes.draw do
+
   resources :comments
 
   resources :mocks
+
+  resources :users, only: %i[index show]
 
   root to: 'home#index'
 
