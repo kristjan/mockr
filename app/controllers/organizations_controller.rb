@@ -1,12 +1,6 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
-  # GET /organizations
-  # GET /organizations.json
-  def index
-    @organizations = Organization.all
-  end
-
   # GET /organizations/1
   # GET /organizations/1.json
   def show
@@ -48,16 +42,6 @@ class OrganizationsController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @organization.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /organizations/1
-  # DELETE /organizations/1.json
-  def destroy
-    @organization.destroy
-    respond_to do |format|
-      format.html { redirect_to organizations_url }
-      format.json { head :no_content }
     end
   end
 
