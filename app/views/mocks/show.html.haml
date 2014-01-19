@@ -1,5 +1,14 @@
 #mock
   = image_tag @mock.image.url
+  - if @mock.comments.any?
+    - @mock.comments.each do |comment|
+      - if comment.top_offset_percentage && comment.left_offset_percentage
+        .comment-marker.currnet-comment-marker{title: comment.body, style: "left: #{comment.left_offset_percentage}%; top: #{comment.top_offset_percentage}%"}
+          .comment-point
+  .comment-marker.next-comment-marker
+    .comment-point.next-comment-point
+    .comment-board
+      = render 'comments/form'
 
 %p.mock-data
   %span.comments-count
@@ -10,8 +19,6 @@
   = @mock.created_at.strftime("%B %e")
 
 .comments
-  = render 'comments/form'
-
   - if @mock.comments.any?
     %ul.comments-list
       - @mock.comments.each do |comment|
