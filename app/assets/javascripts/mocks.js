@@ -1,11 +1,11 @@
 $(function() {
 
   var documentClicked = function(e) {
-    if ($(e.target).parents().index($('#mock')) == -1 ||
-      ($(".next-comment-marker").css("display") == "block" &&
-       $(e.target).parents().index($('.comment-board')) == -1)) {
+    if ($(e.target).parents('#mock').length == 0 ||
+      ($(".next-comment-marker").is(":visible") &&
+       $(e.target).parents('.comment-board').length == 0)) {
       clearNextCommentMarker();
-    } else if ($(".next-comment-marker").css("display") == "none") {
+    } else if ($(".next-comment-marker").is(":hidden")) {
       setNextCommentMarker(e);
     }
   };
