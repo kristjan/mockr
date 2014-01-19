@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "organizations/edit" do
   before(:each) do
-    @organization = assign(:organization, stub_model(Organization,
-      :name => "MyString"
-    ))
+    @organization = assign(:organization, create(:organization))
   end
 
   it "renders the edit organization form" do

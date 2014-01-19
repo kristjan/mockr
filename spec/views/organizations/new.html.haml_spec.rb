@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "organizations/new" do
   before(:each) do
-    assign(:organization, stub_model(Organization,
-      :name => "MyString"
-    ).as_new_record)
+    assign(:organization, build(:organization))
   end
 
   it "renders new organization form" do

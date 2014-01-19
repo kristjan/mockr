@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "organizations/show" do
   before(:each) do
-    @organization = assign(:organization, stub_model(Organization,
-      :name => "Name"
-    ))
+    @organization = assign(:organization, create(:organization))
   end
 
   it "renders attributes in <p>" do
