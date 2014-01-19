@@ -1,5 +1,7 @@
 Mockr::Application.routes.draw do
 
+  resources :organizations
+
   resources :comments
 
   resources :mocks
