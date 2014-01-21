@@ -3,6 +3,10 @@ require "spec_helper"
 describe OrganizationsController do
   describe "routing" do
 
+    it "routes to #index" do
+      get("/organizations").should route_to("organizations#index")
+    end
+
     it "routes to #new" do
       get("/organizations/new").should route_to("organizations#new")
     end

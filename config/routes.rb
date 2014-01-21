@@ -1,6 +1,6 @@
 Mockr::Application.routes.draw do
 
-  resources :organizations, except: %i[index destroy]
+  resources :organizations, except: %i[destroy]
 
   resources :comments
 

@@ -30,6 +30,13 @@ describe OrganizationsController do
   # adjust the attributes here as well.
   let(:valid_attributes) { { "name" => "MyString" } }
 
+  describe "GET index" do
+    it "assigns all the user's organizations as @organizations" do
+      get :index, {}
+      assigns(:organizations).should eq(user.organizations)
+    end
+  end
+
   describe "GET show" do
     it "assigns the requested organization as @organization" do
       organization = Organization.create! valid_attributes
