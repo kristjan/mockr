@@ -25,6 +25,8 @@ class OrganizationsController < ApplicationController
 
     respond_to do |format|
       if @organization.save
+        current_user.join!(@organization, true)
+
         format.html { redirect_to @organization, notice: 'Organization was successfully created.' }
         format.json { render action: 'show', status: :created, location: @organization }
       else

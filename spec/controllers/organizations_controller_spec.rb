@@ -19,8 +19,10 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe OrganizationsController do
+  let(:user) { create(:unaffiliated_user) }
+
   before(:each) do
-    sign_in create(:unaffiliated_user)
+    sign_in(user)
   end
 
   # This should return the minimal set of attributes required to create a valid
@@ -68,6 +70,11 @@ describe OrganizationsController do
       it "redirects to the created organization" do
         post :create, {:organization => valid_attributes}
         response.should redirect_to(Organization.last)
+      end
+
+      it "adds the creator as an admin" do
+        post :create, {:organization => valid_attributes}
+        expect(user).to be_admin(Organization.last)
       end
     end
 
