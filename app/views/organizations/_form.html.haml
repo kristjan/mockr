@@ -6,8 +6,7 @@
         - @organization.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
+  %p.field
+    = f.text_field :name, class: 'form-control', placeholder: "Organization Name"
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn btn-primary'
