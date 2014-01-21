@@ -20,7 +20,7 @@ require 'spec_helper'
 
 describe OrganizationsController do
   before(:each) do
-    sign_in create(:user)
+    sign_in create(:unaffiliated_user)
   end
 
   # This should return the minimal set of attributes required to create a valid

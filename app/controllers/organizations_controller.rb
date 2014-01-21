@@ -1,4 +1,7 @@
 class OrganizationsController < ApplicationController
+  # Can't require the user to be part of one if they're trying to make one
+  skip_before_filter :require_organization
+
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
 
   # GET /organizations/1

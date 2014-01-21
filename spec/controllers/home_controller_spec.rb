@@ -4,7 +4,7 @@ describe HomeController do
 
   describe "GET 'index'" do
     before(:each) do
-      controller.stubs(:authenticate_user!).returns(true)
+      sign_in(create(:user))
     end
 
     it "returns http success" do

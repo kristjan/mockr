@@ -3,8 +3,12 @@ require 'spec_helper'
 describe "Comments" do
   describe "GET /comments" do
     before(:each) do
-      CommentsController.any_instance.stubs(:authenticate_user!).
-        returns(true)
+      CommentsController.any_instance
+        .stubs(:authenticate_user!)
+        .returns(true)
+      CommentsController.any_instance
+        .stubs(:current_user)
+        .returns(create(:user))
     end
 
     it "works! (now write some real specs)" do
