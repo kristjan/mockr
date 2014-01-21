@@ -14,4 +14,12 @@ class Membership < ActiveRecord::Base
   validates :role, inclusion: { in: ROLES }
   validates :user_id, uniqueness: { scope: :organization_id }
 
+  def administrator?
+    role == ADMINISTRATOR
+  end
+
+  def member?
+    role == MEMBER
+  end
+
 end
