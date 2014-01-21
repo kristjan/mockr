@@ -19,7 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe OrganizationsController do
-  let(:user) { create(:unaffiliated_user) }
+  let(:user) { create(:user) }
 
   before(:each) do
     sign_in(user)
@@ -46,6 +46,8 @@ describe OrganizationsController do
   end
 
   describe "GET new" do
+    let(:user) { create(:unaffiliated_user) }
+
     it "assigns a new organization as @organization" do
       get :new, {}
       assigns(:organization).should be_a_new(Organization)
@@ -61,6 +63,8 @@ describe OrganizationsController do
   end
 
   describe "POST create" do
+    let(:user) { create(:unaffiliated_user) }
+
     describe "with valid params" do
       it "creates a new Organization" do
         expect {
