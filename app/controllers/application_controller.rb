@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :authenticate_user!
-  before_filter :require_organization
+  before_filter :require_organization, unless: :devise_controller?
 
 private
 
